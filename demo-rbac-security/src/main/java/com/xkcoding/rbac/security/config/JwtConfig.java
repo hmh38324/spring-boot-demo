@@ -16,6 +16,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class JwtConfig {
     /**
      * jwt 加密 key，默认值：xkcoding.
+     * 不赋值会从配置文件中自动读取
      */
     private String key = "xkcoding";
 

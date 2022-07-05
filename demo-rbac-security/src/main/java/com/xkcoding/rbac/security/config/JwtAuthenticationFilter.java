@@ -30,6 +30,9 @@ import java.util.Set;
 /**
  * <p>
  * Jwt 认证过滤器
+ * 主要功能：
+ * 1. 过滤不需要拦截的请求
+ * 2. 根据当前请求的JWT，认证用户身份信息
  * </p>
  *
  * @author yangkai.shen

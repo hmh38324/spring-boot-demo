@@ -26,6 +26,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * <p>
  * JWT 工具类
+ * 主要功能：生成JWT并存入Redis、解析JWT并校验其准确性、从Request的Header中获取JWT
  * </p>
  *
  * @author yangkai.shen

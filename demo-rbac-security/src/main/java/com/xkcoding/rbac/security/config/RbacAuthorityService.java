@@ -31,6 +31,9 @@ import java.util.stream.Collectors;
 /**
  * <p>
  * 动态路由认证
+ *  路由动态鉴权类，主要功能：
+ * 1. 校验请求的合法性，排除404和405这两种异常请求
+ * 2. 根据当前请求路径与该用户可访问的资源做匹配，通过则可以访问，否则，不允许访问
  * </p>
  *
  * @author yangkai.shen
@@ -92,6 +95,7 @@ public class RbacAuthorityService {
     private void checkRequest(HttpServletRequest request) {
         // 获取当前 request 的方法
         String currentMethod = request.getMethod();
+        //获取 所有URL Mapping，返回格式为{"/test":["GET","POST"],"/sys":["GET","DELETE"]}
         Multimap<String, String> urlMapping = allUrlMapping();
 
         for (String uri : urlMapping.keySet()) {
