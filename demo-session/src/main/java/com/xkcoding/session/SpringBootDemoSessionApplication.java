@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * <p>
  * 启动类
+ * 此 demo 主要演示了 Spring Boot 如何通过 Spring Session 实现Session共享、重启程序Session不失效。
  * </p>
  *
  * @author yangkai.shen

@@ -30,6 +30,13 @@ import java.util.concurrent.TimeUnit;
 public class SampleXxlJob {
     private static Logger logger = LoggerFactory.getLogger(SampleXxlJob.class);
 
+    /**
+     * 学习强国每日邮件提醒
+     */
+    @XxlJob("xxqgremind")
+    public void xxqgremind(){
+
+    }
 
     /**
      * 1、简单任务示例（Bean模式）
