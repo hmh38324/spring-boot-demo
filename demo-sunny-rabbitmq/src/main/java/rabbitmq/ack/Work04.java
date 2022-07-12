@@ -2,14 +2,14 @@ package rabbitmq.ack;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DeliverCallback;
-import rabbitmq.utils.RabbitMqUtils;
+import rabbitmq.utils.RabbitUtils;
 import rabbitmq.utils.SleepUtils;
 
 public class Work04 {
     private static final String ACK_QUEUE_NAME = "ack_queue";
 
     public static void main(String[] args) throws Exception {
-        Channel channel = RabbitMqUtils.getChannel();
+        Channel channel = RabbitUtils.getChannel();
         System.out.println("C2 等待接收消息处理时间较长");
 //消息消费的时候如何处理消息
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {

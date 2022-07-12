@@ -3,12 +3,12 @@ package rabbitmq.workQueues;
 import com.rabbitmq.client.CancelCallback;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DeliverCallback;
-import rabbitmq.utils.RabbitMqUtils;
+import rabbitmq.utils.RabbitUtils;
 
 public class WorkerConsumer01 {
     private static final String QUEUE_NAME="hello";
     public static void main(String[] args) throws Exception {
-        Channel channel = RabbitMqUtils.getChannel();
+        Channel channel = RabbitUtils.getChannel();
         DeliverCallback deliverCallback=(consumerTag, delivery)->{
             String receivedMessage = new String(delivery.getBody());
             System.out.println("接收到消息:"+receivedMessage);

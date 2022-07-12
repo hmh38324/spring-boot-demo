@@ -2,9 +2,8 @@ package rabbitmq.confirmSelect;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.ConfirmCallback;
-import rabbitmq.utils.RabbitMqUtils;
+import rabbitmq.utils.RabbitUtils;
 
-import java.util.Scanner;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -25,7 +24,7 @@ public class Task02 {
      * @throws Exception
      */
     public static void publishMessageIndividually() throws Exception {
-        try (Channel channel = RabbitMqUtils.getChannel()) {
+        try (Channel channel = RabbitUtils.getChannel()) {
             String queueName = UUID.randomUUID().toString();
             channel.queueDeclare(queueName, false, false, false, null);
             // 开启发布确认
@@ -51,7 +50,7 @@ public class Task02 {
      * @throws Exception
      */
     public static void publishMessageBatch() throws Exception {
-        try (Channel channel = RabbitMqUtils.getChannel()) {
+        try (Channel channel = RabbitUtils.getChannel()) {
             String queueName = UUID.randomUUID().toString();
             channel.queueDeclare(queueName, false, false, false, null);
             // 开启发布确认
@@ -85,7 +84,7 @@ public class Task02 {
      * @throws Exception
      */
     public static void publishMessageAsync() throws Exception {
-        try (Channel channel = RabbitMqUtils.getChannel()) {
+        try (Channel channel = RabbitUtils.getChannel()) {
             String queueName = UUID.randomUUID().toString();
             channel.queueDeclare(queueName, false, false, false, null);
             // 开启发布确认

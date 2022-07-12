@@ -2,14 +2,14 @@ package rabbitmq.durable;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.MessageProperties;
-import rabbitmq.utils.RabbitMqUtils;
+import rabbitmq.utils.RabbitUtils;
 
 import java.util.Scanner;
 
 public class Task02 {
     private static final String TASK_QUEUE_NAME = "ack_queue";
     public static void main(String[] argv) throws Exception {
-        try (Channel channel = RabbitMqUtils.getChannel()) {
+        try (Channel channel = RabbitUtils.getChannel()) {
             channel.queueDeclare(TASK_QUEUE_NAME, false, false, false, null);
             Scanner sc = new Scanner(System.in);
             System.out.println("请输入信息");

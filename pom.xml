@@ -70,10 +70,8 @@
     <module>demo-https</module>
     <module>demo-flyway</module>
     <module>demo-pay</module>
-      <module>sunny-demo-rabbirmq</module>
-    <module>sunny-demo-rabbirmq</module>
-    <module>sunny-demo-rabbirmq</module>
     <module>demo-sunny-rabbitmq</module>
+      <module>demo-sunny-rabbitmq-TTL</module>
   </modules>
   <packaging>pom</packaging>
 
